@@ -1,339 +1,1102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>zeecomedia &mdash; Onepage Template by Colorlib</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/icomoon@1.0.0/style.min.css" rel="stylesheet">
-<link rel="stylesheet" href="fonts/icomoon/style.css">
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/jquery-ui.css">
-<link rel="stylesheet" href="css/owl.carousel.min.css">
-<link rel="stylesheet" href="css/owl.theme.default.min.css">
-<link rel="stylesheet" href="css/owl.theme.default.min.css">
-<link rel="stylesheet" href="css/jquery.fancybox.min.css">
-<link rel="stylesheet" href="css/bootstrap-datepicker.css">
-<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-<link rel="stylesheet" href="css/aos.css">
-<link rel="stylesheet" href="css/style.css">
+  <title>zeecomedia — Modern Software Solutions</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary: #7b4dff;
+      --primary-dark: #5e37c9;
+      --secondary: #222222;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --gray: #6c757d;
+      --white: #ffffff;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+    }
+    
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    a:hover {
+      color: var(--primary-dark);
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 50px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      color: var(--white);
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    /* Header Styles */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 20px 0;
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header-scrolled {
+      padding: 10px 0;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+    
+    .logo span {
+      color: var(--primary);
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 30px;
+    }
+    
+    .nav-links a {
+      color: var(--secondary);
+      font-weight: 500;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+    
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: var(--secondary);
+    }
+    
+    /* Hero Section */
+    .hero {
+      padding: 160px 0 100px;
+      position: relative;
+      background: linear-gradient(135deg, rgba(123, 77, 255, 0.1) 0%, rgba(34, 34, 34, 0.05) 100%);
+    }
+    
+    .hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .hero-text {
+      width: 50%;
+    }
+    
+    .hero-text h1 {
+      font-size: 48px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--secondary);
+    }
+    
+    .hero-text p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: var(--gray);
+    }
+    
+    .hero-image {
+      width: 45%;
+    }
+    
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      animation: float 4s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    /* Features Section */
+    .features {
+      padding: 100px 0;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .section-header h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+      color: var(--secondary);
+    }
+    
+    .section-header p {
+      font-size: 18px;
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .feature-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(123, 77, 255, 0.2);
+    }
+    
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(123, 77, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+    .feature-icon i {
+      font-size: 24px;
+      color: var(--primary);
+    }
+    
+    .feature-card h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+    
+    .feature-card p {
+      color: var(--gray);
+      margin-bottom: 15px;
+    }
+    
+    /* Pricing Section */
+    .pricing {
+      padding: 100px 0;
+      background-color: var(--light);
+    }
+    
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .pricing-plan {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 40px 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .pricing-plan:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(123, 77, 255, 0.2);
+    }
+    
+    .plan-popular {
+      position: absolute;
+      top: 20px;
+      right: -35px;
+      transform: rotate(45deg);
+      background: var(--primary);
+      color: var(--white);
+      padding: 5px 40px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    
+    .plan-name {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: var(--secondary);
+    }
+    
+    .plan-price {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: var(--primary);
+    }
+    
+    .plan-duration {
+      color: var(--gray);
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+    
+    .plan-features {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+    
+    .plan-features li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .plan-features i {
+      color: var(--primary);
+      margin-right: 8px;
+    }
+    
+    .pricing-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    
+    .toggle-label {
+      margin: 0 10px;
+      font-weight: 500;
+    }
+    
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+    
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    .toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 34px;
+    }
+    
+    .toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    
+    input:checked + .toggle-slider {
+      background-color: var(--primary);
+    }
+    
+    input:checked + .toggle-slider:before {
+      transform: translateX(24px);
+    }
+    
+    .yearly-discount {
+      background: rgba(123, 77, 255, 0.1);
+      color: var(--primary);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+    
+    /* About Section */
+    .about {
+      padding: 100px 0;
+    }
+    
+    .about-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .about-image {
+      width: 45%;
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: auto;
+    }
+    
+    .about-text {
+      width: 50%;
+    }
+    
+    .about-text h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: var(--secondary);
+    }
+    
+    .about-text p {
+      margin-bottom: 30px;
+      color: var(--gray);
+    }
+    
+    /* Team Section */
+    .team {
+      padding: 50px 0;
+    }
+    
+    .team-member {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .team-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 15px;
+    }
+    
+    .team-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .team-name {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+    
+    .team-role {
+      color: var(--gray);
+      font-size: 14px;
+    }
+    
+    /* Contact Section */
+    .contact {
+      padding: 100px 0;
+      background: linear-gradient(135deg, rgba(123, 77, 255, 0.9) 0%, rgba(34, 34, 34, 0.9) 100%), url('images/hero_1.jpg');
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+    }
+    
+    .contact .section-header h2,
+    .contact .section-header p {
+      color: var(--white);
+    }
+    
+    .contact-form {
+      background: var(--white);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .contact-form h3 {
+      color: var(--secondary);
+      margin-bottom: 30px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+    }
+    
+    .form-row {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .form-row .form-group {
+      flex: 1;
+    }
+    
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+    
+    /* Footer */
+    .footer {
+      padding: 60px 0 30px;
+      background-color: var(--secondary);
+      color: var(--white);
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-col h4 {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.7);
+      transition: all 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+    
+    .footer-social {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      transition: all 0.3s ease;
+    }
+    
+    .footer-social a:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .hero-content,
+      .about-content {
+        flex-direction: column;
+      }
+      
+      .hero-text,
+      .hero-image,
+      .about-text,
+      .about-image {
+        width: 100%;
+        text-align: center;
+      }
+      
+      .hero-image,
+      .about-image {
+        margin-top: 40px;
+      }
+      
+      .hero-text h1 {
+        font-size: 36px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--white);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 40px;
+        transition: all 0.3s ease;
+      }
+      
+      .nav-links.active {
+        left: 0;
+      }
+      
+      .nav-links li {
+        margin: 15px 0;
+      }
+      
+      .hamburger {
+        display: block;
+      }
+      
+      .section-header h2 {
+        font-size: 28px;
+      }
+      
+      .hero-text h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
 </head>
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-<div id="overlayer"></div>
-<div class="loader">
-<div class="spinner-border text-primary" role="status">
-<span class="sr-only">Loading...</span>
-</div>
-</div>
-<div class="site-wrap" id="home-section">
-<div class="site-mobile-menu site-navbar-target">
-<div class="site-mobile-menu-header">
-<div class="site-mobile-menu-close mt-3">
-<span class="icon-close2 js-menu-toggle"></span>
-</div>
-</div>
-<div class="site-mobile-menu-body"></div>
-</div>
-<header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
-<div class="container">
-<div class="row align-items-center">
-<div class="col-6 col-md-3 col-xl-4  d-block">
-<h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">zeecomedia<span class="text-primary">.</span> </a></h1>
-</div>
-<div class="col-12 col-md-9 col-xl-8 main-menu">
-<nav class="site-navigation position-relative text-right" role="navigation">
-<ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0">
-<li><a href="#home-section" class="nav-link">Home</a></li>
-<li><a href="#features-section" class="nav-link">Features</a></li>
-<li class="has-children">
-<a href="#about-section" class="nav-link">About Us</a>
-<ul class="dropdown arrow-top">
-</ul>
-</li>
-<li><a href="#contact-section" class="nav-link">Contact</a></li>
-</ul>
-</nav>
-</div>
-<div class="col-6 col-md-9 d-inline-block d-lg-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a></div>
-</div>
-</div>
-</header>
-<div class="site-blocks-cover" style="overflow: hidden;">
-<div class="container">
-<div class="row align-items-center justify-content-center">
-<div class="col-md-12" style="position: relative;" data-aos="fade-up" data-aos-delay="200">
-<img src="images/undraw_investing_7u74.svg" alt="Image" class="img-fluid img-absolute">
-<div class="row mb-4" data-aos="fade-up" data-aos-delay="200">
-<div class="col-lg-6 mr-auto">
-<h1>Make Your Business More Profitable</h1>
-<p class="mb-5">Where software innovation meets creative solutions.</p>
-<div>
-<a href="mailto:zeecomedia2@gmail.com" class="btn btn-primary mr-2 mb-2">Get Started</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="site-section" id="features-section">
-<div class="container">
-<div class="row mb-5 justify-content-center text-center" data-aos="fade-up">
-<div class="col-7 text-center  mb-5">
-<h2 class="section-title">zeecomedia features</h2>
-<p class="lead">We specialize in custom software development, web and mobile app development, system integration, and digital transformation consulting.</p>
-</div>
-</div>
-<div class="row align-items-stretch">
-<div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
-<div class="unit-4 d-block">
-<div class="unit-4-icon mb-3">
-<span class="icon-wrap"><span class="text-primary icon-autorenew"></span></span>
-</div>
-<div>
-<h3>Digital Transformation Consulting</h3>
-<p>Digital Transformation Consulting: Empowering your business for the future.</p>
-<p><a href="#">Learn More</a></p>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
-<div class="unit-4 d-block">
-<div class="unit-4-icon mb-3">
-<span class="icon-wrap"><span class="text-primary icon-store_mall_directory"></span></span>
-</div>
-<div>
-<h3>System Integration</h3>
-<p>System Integration: Bridging technology gaps, empowering businesses.</p>
-<p><a href="#">Learn More</a></p>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
-<div class="unit-4 d-block">
-<div class="unit-4-icon mb-3">
-<span class="icon-wrap"><span class="text-primary icon-shopping_basket"></span></span>
-</div>
-<div>
-<h3>Web and Mobile App Development</h3>
-<p>Elevate your digital presence with Web and Mobile App Development.</p>
-<p><a href="#">Learn More</a></p>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
-<div class="unit-4 d-block">
-<div class="unit-4-icon mb-3">
-<span class="icon-wrap"><span class="text-primary icon-settings_backup_restore"></span></span>
-</div>
-<div>
-<h3>Custom Software Development</h3>
-<p>Crafting software that fits your business like a glove - Custom Software Development.</p>
-<p><a href="#">Learn More</a></p>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
-<div class="unit-4 d-block">
-<div class="unit-4-icon mb-3">
-<span class="icon-wrap"><span class="text-primary icon-sentiment_satisfied"></span></span>
-</div>
-<div>
-<h3>Artificial Intelligence (AI)</h3>
-<p>Accelerating growth with actionable insights and smart solutions.</p>
-<p><a href="#">Learn More</a></p>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
-<div class="unit-4 d-block">
-<div class="unit-4-icon mb-3">
-<span class="icon-wrap"><span class="text-primary icon-power"></span></span>
-</div>
-<div>
-<h3>Technical Consultation</h3>
-<p>Transforming technology challenges into opportunities - Technical Consultation.</p>
-<p><a href="#">Learn More</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="feature-big">
-<div class="container">
-<div class="row mb-5 site-section">
-<div class="col-lg-7" data-aos="fade-right">
-<img src="images/undraw_gift_card_6ekc.svg" alt="Image" class="img-fluid">
-</div>
-<!-- <div class="col-lg-5 pl-lg-5 ml-auto mt-md-5">
-<h2 class="text-black">Communicate and gather feedback</h2>
-<p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem neque nisi architecto autem molestias corrupti officia veniam.</p>
-<div class="author-box" data-aos="fade-left">
-<div class="d-flex mb-4">
-<div class="mr-3">
-<img src="images/person_4.jpg" alt="Image" class="img-fluid rounded-circle">
-</div>
-<div class="mr-auto text-black">
-<strong class="font-weight-bold mb-0">Grey Simpson</strong> <br>
-Co-Founder, XYZ Inc.
-</div>
-</div>
-<blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus vitae ipsa asperiores inventore aperiam iure?&rdquo;</blockquote>
-</div>
-</div>
-</div> -->
-<!-- <div class="mt-5 row mb-5 site-section ">
-<div class="col-lg-7 order-1 order-lg-2" data-aos="fade-left">
-<img src="images/undraw_metrics_gtu7.svg" alt="Image" class="img-fluid">
-</div>
-<div class="row mb-5 site-section">
-<div class="col-lg-7" data-aos="fade-right">
-<img src="images/undraw_gift_card_6ekc.svg" alt="Image" class="img-fluid">
-</div> -->
-<div class="col-lg-5 pl-lg-5 ml-auto mt-md-5">
-<h2 class="text-black">Communicate and gather feedback</h2>
-<div class="author-box" data-aos="fade-left">
-<div class="d-flex mb-4">
-<div class="mr-3">
-<img src="images/my-pic.jpeg" alt="Image" class="img-fluid rounded-circle">
-</div>
-<div class="mr-auto text-black">
-<strong class="font-weight-bold mb-0">Isaac Yakubu</strong> <br>
-Founder, zeecomedia Inc.
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="mt-5 row mb-5 site-section ">
-<div class="col-lg-7 order-1 order-lg-2" data-aos="fade-left">
-<!-- <img src="images/undraw_metrics_gtu7.svg" alt="Image" class="img-fluid"> -->
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="site-section bg-light" id="about-section">
-<div class="container">
-<div class="row mb-5">
-<div class="col-12 text-center">
-<h2 class="section-title mb-3">About Us</h2>
-</div>
-</div>
-<div class="row mb-5">
-<div class="col-lg-6" data-aos="fade-right">
-<img src="images/undraw_bookmarks_r6up.svg" alt="Image" class="img-fluid">
-</div>
-<div class="col-lg-5 ml-auto pl-lg-5">
-<h2 class="text-black mb-4 h3 font-weight-bold">Our Mission</h2>
-<p class="mb-4">At Zeecomedia, our mission is to empower businesses of all sizes with innovative software solutions that drive growth and success in the digital age. We are a cutting-edge software development agency, dedicated to creating tailored, efficient, and effective software solutions that cater to the unique needs of each client.</p>
-<p><a href="mailto:zeecomedia2@gmai.com" class="btn btn-primary">Learn More</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="site-section bg-image2 overlay" id="contact-section" style="background-image: url('images/hero_1.jpg');">
-<div class="container">
-<div class="row mb-5">
-<div class="col-12 text-center">
-<h2 class="section-title mb-3 text-white">Contact Us</h2>
-</div>
-</div>
-<div class="row justify-content-center">
-<div class="col-lg-7 mb-5">
-<form action="#" class="p-5 bg-white" data-netlify="true">
-<h2 class="h4 text-black mb-5">Contact Form</h2>
-<div class="row form-group">
-<div class="col-md-6 mb-3 mb-md-0">
-<label class="text-black" for="fname">First Name</label>
-<input type="text" id="fname" class="form-control rounded-0">
-</div>
-<div class="col-md-6">
-<label class="text-black" for="lname">Last Name</label>
-<input type="text" id="lname" class="form-control rounded-0">
-</div>
-</div>
-<div class="row form-group">
-<div class="col-md-12">
-<label class="text-black" for="email">Email</label>
-<input type="email" id="email" class="form-control rounded-0">
-</div>
-</div>
-<div class="row form-group">
-<div class="col-md-12">
-<label class="text-black" for="subject">Subject</label>
-<input type="subject" id="subject" class="form-control rounded-0">
-</div>
-</div>
-<div class="row form-group">
-<div class="col-md-12">
-<label class="text-black" for="message">Message</label>
-<textarea name="message" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Leave your message here..."></textarea>
-</div>
-</div>
-<div class="row form-group">
-<div class="col-md-12">
-<input type="submit" value="Send Message" class="btn btn-primary mr-2 mb-2">
-</div>
-</div>
-</form>
-</div>
-</div>
-</div>
-</div>
-<div class="footer py-5 text-center">
-<div class="container">
-<div class="row mb-5">
-<div class="col-12">
-<p class="mb-0">
-<a href="#" class="p-3"><span class="icon-facebook"></span></a>
-<a href="#" class="p-3"><span class="icon-twitter"></span></a>
-<a href="#" class="p-3"><span class="icon-instagram"></span></a>
-<a href="#" class="p-3"><span class="icon-linkedin"></span></a>
-<a href="#" class="p-3"><span class="icon-pinterest"></span></a>
-</p>
-</div>
-</div>
-<div class="row">
-<div class="col-md-12">
-<p class="mb-0">
+<body>
+  <!-- Preloader -->
+  <div id="preloader" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #fff; z-index: 9999; display: flex; align-items: center; justify-content: center;">
+    <div class="spinner" style="width: 40px; height: 40px; border: 4px solid rgba(0,0,0,0.1); border-radius: 50%; border-top-color: #7b4dff; animation: spin 1s linear infinite;"></div>
+  </div>
 
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | zeecomedia</a>
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="#" class="logo">zeeco<span>media</span>.</a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-</p>
-</div>
-</div>
-</div>
-</div>
-</div> 
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/jquery-ui.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.countdown.min.js"></script>
-<script src="js/bootstrap-datepicker.min.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/aos.js"></script>
-<script src="js/jquery.fancybox.min.js"></script>
-<script src="js/jquery.sticky.js"></script>
-<script src="js/main.js"></script>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Make Your Business More Profitable</h1>
+          <p>Where software innovation meets creative solutions for digital transformation and business growth.</p>
+          <a href="mailto:zeecomedia2@gmail.com" class="btn btn-primary">Get Started</a>
+          <a href="#pricing" class="btn btn-outline" style="margin-left: 15px;">View Plans</a>
+        </div>
+        <div class="hero-image">
+          <img src="images/undraw_investing_7u74.svg" alt="Business Growth Illustration">
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Cutting-Edge Services</h2>
+        <p>We specialize in custom software development, web and mobile app development, system integration, and digital transformation consulting.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-sync-alt"></i>
+          </div>
+          <h3>Digital Transformation</h3>
+          <p>Empowering your business for the future with strategic digital adoption and integration.</p>
+          <a href="#pricing">Learn More</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-network-wired"></i>
+          </div>
+          <h3>System Integration</h3>
+          <p>Bridging technology gaps, empowering businesses with seamless connectivity.</p>
+          <a href="#pricing">Learn More</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Web & Mobile Apps</h3>
+          <p>Elevate your digital presence with responsive websites and powerful mobile applications.</p>
+          <a href="#pricing">Learn More</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>Custom Software</h3>
+          <p>Crafting software that fits your business like a glove, tailored to your specific needs.</p>
+          <a href="#pricing">Learn More</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3>Artificial Intelligence</h3>
+          <p>Accelerating growth with actionable insights and smart AI-powered solutions.</p>
+          <a href="#pricing">Learn More</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h3>Technical Consultation</h3>
+          <p>Transforming technology challenges into opportunities with expert guidance.</p>
+          <a href="#pricing">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  gtag('config', 'UA-23581568-13');
-</script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"861a57e898ba6358","b":1,"version":"2024.2.4","token":"cd0b4b3a733644fc843ef0b185f98241"}' crossorigin="anonymous"></script>
+  <!-- Pricing Section -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <h2>Simple, Transparent Pricing</h2>
+        <p>Choose the plan that works best for your business needs with no hidden fees.</p>
+      </div>
+      <div class="pricing-toggle">
+        <span class="toggle-label">Monthly</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="pricingToggle">
+          <span class="toggle-slider"></span>
+        </label>
+        <span class="toggle-label">Yearly</span>
+        <span class="yearly-discount">Save 20%</span>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-plan">
+          <h3 class="plan-name">Essential</h3>
+          <div class="monthly-price">
+            <h4 class="plan-price">$299</h4>
+            <p class="plan-duration">per month</p>
+          </div>
+          <div class="yearly-price" style="display: none;">
+            <h4 class="plan-price">$2,870</h4>
+            <p class="plan-duration">per year</p>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i> Custom Website Development</li>
+            <li><i class="fas fa-check"></i> Mobile-Responsive Design</li>
+            <li><i class="fas fa-check"></i> Basic Technical Support</li>
+            <li><i class="fas fa-check"></i> 2 Revision Rounds</li>
+            <li><i class="fas fa-check"></i> 1 Month Maintenance</li>
+          </ul>
+          <a href="mailto:zeecomedia2@gmail.com?subject=Essential%20Plan%20Inquiry" class="btn btn-outline">Get Started</a>
+        </div>
+        <div class="pricing-plan">
+          <div class="plan-popular">Popular</div>
+          <h3 class="plan-name">Professional</h3>
+          <div class="monthly-price">
+            <h4 class="plan-price">$699</h4>
+            <p class="plan-duration">per month</p>
+          </div>
+          <div class="yearly-price" style="display: none;">
+            <h4 class="plan-price">$6,710</h4>
+            <p class="plan-duration">per year</p>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i> Custom Web/Mobile App Development</li>
+            <li><i class="fas fa-check"></i> System Integration</li>
+            <li><i class="fas fa-check"></i> Technical Consultation</li>
+            <li><i class="fas fa-check"></i> Priority Support</li>
+            <li><i class="fas fa-check"></i> 3 Month Maintenance</li>
+          </ul>
+          <a href="mailto:zeecomedia2@gmail.com?subject=Professional%20Plan%20Inquiry" class="btn btn-primary">Get Started</a>
+        </div>
+        <div class="pricing-plan">
+          <h3 class="plan-name">Enterprise</h3>
+          <div class="monthly-price">
+            <h4 class="plan-price">$1,499</h4>
+            <p class="plan-duration">per month</p>
+          </div>
+          <div class="yearly-price" style="display: none;">
+            <h4 class="plan-price">$14,390</h4>
+            <p class="plan-duration">per year</p>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i> Full Digital Transformation</li>
+            <li><i class="fas fa-check"></i> AI Implementation</li>
+            <li><i class="fas fa-check"></i> Custom Software Development</li>
+            <li><i class="fas fa-check"></i> Dedicated Project Manager</li>
+            <li><i class="fas fa-check"></i> 12 Month Maintenance</li>
+          </ul>
+          <a href="mailto:zeecomedia2@gmail.com?subject=Enterprise%20Plan%20Inquiry" class="btn btn-outline">Get Started</a>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <p>Need a custom solution? <a href="mailto:zeecomedia2@gmail.com?subject=Custom%20Solution%20Inquiry">Contact us</a> for a personalized quote.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2>About Zeecomedia</h2>
+      </div>
+      <div class="about-content">
+        <div class="about-image">
+          <img src="images/undraw_bookmarks_r6up.svg" alt="About Zeecomedia">
+        </div>
+        <div class="about-text">
+          <h2>Our Mission</h2>
+          <p>At Zeecomedia, our mission is to empower businesses of all sizes with innovative software solutions that drive growth and success in the digital age. We are a cutting-edge software development agency, dedicated to creating tailored, efficient, and effective software solutions that cater to the unique needs of each client.</p>
+          <p>Our team of expert developers, designers, and consultants work collaboratively to deliver transformative digital experiences that help our clients stay ahead in today's competitive marketplace.</p>
+          <a href="mailto:zeecomedia2@gmail.com?subject=Learn%20More%20About%20Zeecomedia" class="btn btn-primary">Connect With Us</a>
+        </div>
+      </div>
+      <div class="team">
+        <div class="team-member">
+          <div class="team-image">
+            <img src="images/my-pic.jpeg" alt="Isaac Yakubu">
+          </div>
+          <h4 class="team-name">Isaac Yakubu</h4>
+          <p class="team-role">Founder, Zeecomedia Inc.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2>Get In Touch</h2>
+        <p>Have questions about our services? Reach out to us today!</p>
+      </div>
+      <form class="contact-form" data-netlify="true">
+        <h3>Contact Form</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" class="form-control" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" class="form-control" rows="5" placeholder="How can we help you?" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h4>zeecomedia</h4>
+          <a href="#" class="logo" style="color: white; font-size: 22px;">zeeco<span style="color: var(--primary);">media</span>.</a>
+          <p style="margin-top: 15px; color: rgba(255, 255, 255, 0.7);">Where software innovation meets creative solutions for digital transformation and business growth.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="#pricing">Digital Transformation</a></li>
+            <li><a href="#pricing">System Integration</a></li>
+            <li><a href="#pricing">Web & Mobile Apps</a></li>
+            <li><a href="#pricing">Custom Software</a></li>
+            <li><a href="#pricing">AI Solutions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#features">Our Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-envelope" style="color: var(--primary); margin-right: 10px;"></i> <a href="mailto:zeecomedia2@gmail.com">zeecomedia2@gmail.com</a></li>
+            <li><i class="fas fa-phone" style="color: var(--primary); margin-right: 10px;"></i> Contact us via email</li>
+            <li><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 10px;"></i> Global services, worldwide delivery</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> All rights reserved | zeecomedia</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#" id="back-to-top" style="position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background-color: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 99;">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Preloader
+      setTimeout(function() {
+        document.getElementById('preloader').style.display = 'none';
+      }, 800);
+      
+      // Sticky Header
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          document.getElementById('header').classList.add('header-scrolled');
+          document.getElementById('back-to-top').style.opacity = '1';
+          document.getElementById('back-to-top').style.visibility = 'visible';
+        } else {
+          document.getElementById('header').classList.remove('header-scrolled');
+          document.getElementById('back-to-top').style.opacity = '0';
+          document.getElementById('back-to-top').style.visibility = 'hidden';
+        }
+      });
+      
+      // Mobile Menu Toggle
+      document.getElementById('hamburger').addEventListener('click', function() {
+        document.getElementById('navLinks').classList.toggle('active');
+        const icon = this.querySelector('i');
+        if (icon.classList.contains('fa-bars')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+      
+      // Smooth Scrolling for Anchor Links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          // Close mobile menu if open
+          document.getElementById('navLinks').classList.remove('active');
+          const hamburgerIcon = document.querySelector('#hamburger i');
+          if (hamburgerIcon.classList.contains('fa-times')) {
+            hamburgerIcon.classList.remove('fa-times');
+            hamburgerIcon.classList.add('fa-bars');
+          }
+          
+          // Scroll to target
+          document.querySelector(this.getAttribute('href')).scrollAnimated({
+            top: this.getAttribute('href') === '#' ? 0 : document.querySelector(this.getAttribute('href')).offsetTop - 70,
+            behavior: 'smooth'
+          });
+        });
+      });
+      
+      // Pricing Toggle
+      const pricingToggle = document.getElementById('pricingToggle');
+      const monthlyPrices = document.querySelectorAll('.monthly-price');
+      const yearlyPrices = document.querySelectorAll('.yearly-price');
+      
+      pricingToggle.addEventListener('change', function() {
+        if (this.checked) {
+          monthlyPrices.forEach(price => price.style.display = 'none');
+          yearlyPrices.forEach(price => price.style.display = 'block');
+        } else {
+          monthlyPrices.forEach(price => price.style.display = 'block');
+          yearlyPrices.forEach(price => price.style.display = 'none');
+        }
+      });
+      
+      // Active menu item on scroll
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.nav-links a');
+      
+      window.addEventListener('scroll', function() {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= (sectionTop - 150)) {
+            current = section.getAttribute('id');
+          }
+        });
+        
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href').substring(1) === current) {
+            link.classList.add('active');
+          }
+        });
+      });
+      
+      // Custom smooth scroll polyfill
+      if (!('scrollBehavior' in document.documentElement.style)) {
+        Element.prototype.scrollAnimated = function(options) {
+          const start = window.pageYOffset;
+          const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+          const target = typeof options.top === 'number' ? options.top : start;
+          const duration = options.behavior === 'smooth' ? 500 : 0;
+          
+          const animateScroll = function(timestamp) {
+            const currentTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+            const time = Math.min(1, ((currentTime - startTime) / duration));
+            const ease = function(t) { return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; };
+            window.scrollTo(0, Math.ceil((ease(time) * (target - start)) + start));
+            
+            if (time < 1) {
+              requestAnimationFrame(animateScroll);
+            }
+          };
+          
+          requestAnimationFrame(animateScroll);
+        };
+      }
+    });
+    
+    // Form Submission with Netlify
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = this;
+      const formData = new FormData(form);
+      
+      // You would typically send this to your backend or Netlify
+      // This is just a placeholder to show form submission success
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+      
+      // Simulate form submission (replace with actual submission code)
+      setTimeout(function() {
+        form.reset();
+        submitBtn.textContent = 'Message Sent!';
+        setTimeout(function() {
+          submitBtn.textContent = originalBtnText;
+          submitBtn.disabled = false;
+        }, 3000);
+      }, 1500);
+    });
+  </script>
 </body>
 </html>
