@@ -1136,7 +1136,7 @@
         const formData = new FormData(form);
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalBtnText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
+        submitBtn.textContent = 'Sent';
         submitBtn.disabled = true;
         setTimeout(function() {
           form.reset();
@@ -1149,57 +1149,33 @@
       });
 
       // AI Prompt Form Submission
-      document.addEventListener("DOMContentLoaded", function() {
-      const aiForm = document.getElementById('aiPromptForm');
-      const messageEl = document.getElementById('aiPromptMessage');
-
-      aiForm.addEventListener('submit', async function(e) {
+      document.getElementById('aiPromptForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        const emailInput = document.getElementById('promptEmail');
-        const email = emailInput.value.trim();
-
-        // Simple validation
-        if (!email) {
-          messageEl.style.color = 'red';
-          messageEl.textContent = 'Please enter a valid email address.';
-          return;
-        }
-
-        // Prepare button state
-        const submitBtn = aiForm.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.textContent;
-        submitBtn.textContent = 'Sent';
-        submitBtn.disabled = true;
+        const email = document.getElementById('promptEmail').value;
+        const messageEl = document.getElementById('aiPromptMessage');
         messageEl.textContent = '';
-
-        try {
-          const response = await fetch('https://zeecomedia.online/subscribe', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email })
-          });
-
-          const data = await response.json();
-
-          if (response.ok) {
+        messageEl.style.color = '';
+        fetch('https://zeecomedia-mail.onrender.com/subscribe', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email: email })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
             messageEl.style.color = 'green';
-            messageEl.textContent = data.message || 'Email sent successfully! Check your inbox for the eBook.';
-            aiForm.reset();
+            messageEl.textContent = 'Success! Check your email for the free eBook.';
+            document.getElementById('aiPromptForm').reset();
           } else {
-            messageEl.style.color = 'red';
-            messageEl.textContent = data.error || 'An error occurred. Please try again.';
+            throw new Error(data.message || 'Failed to send eBook.');
           }
-
-        } catch (err) {
+        })
+        .catch(err => {
           messageEl.style.color = 'red';
-          messageEl.textContent = `Error: ${err.message}`;
-        } finally {
-          // Restore button
-          submitBtn.textContent = originalBtnText;
-          submitBtn.disabled = false;
-        }
+          messageEl.textContent = 'Error: ' + err.message;
+        });
       });
     });
     
