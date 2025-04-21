@@ -1106,7 +1106,7 @@
       // This is just a placeholder to show form submission success
       const submitBtn = form.querySelector('button[type="submit"]');
       const originalBtnText = submitBtn.textContent;
-      submitBtn.textContent = 'Sending...';
+      submitBtn.textContent = 'Sent';
       submitBtn.disabled = true;
       
       // Simulate form submission (replace with actual submission code)
@@ -1138,14 +1138,6 @@
         const originalBtnText = submitBtn.textContent;
         submitBtn.textContent = 'Sent';
         submitBtn.disabled = true;
-        setTimeout(function() {
-          form.reset();
-          submitBtn.textContent = 'Message Sent!';
-          setTimeout(function() {
-            submitBtn.textContent = originalBtnText;
-            submitBtn.disabled = false;
-          }, 3000);
-        }, 1500);
       });
 
       // AI Prompt Form Submission
