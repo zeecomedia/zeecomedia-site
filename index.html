@@ -869,21 +869,21 @@
   </section>
 
   <section class="ai-prompt" id="ai-prompt">
-    <div class="container">
-      <div class="section-header">
-        <h2>Get Your Free AI Prompt eBook</h2>
-        <p>Enter your email to receive the free AI prompt PDF book.</p>
-      </div>
-      <form id="aiPromptForm" class="contact-form" novalidate>
-        <div class="form-group">
-          <label for="promptEmail">Email</label>
-          <input type="email" id="promptEmail" class="form-control" placeholder="Your email" required>
-        </div>
-<!--         <button type="submit" class="btn btn-primary">Send me the eBook</button> -->
-      </form>
-      <div id="aiPromptMessage" style="margin-top: 20px;"></div>
+  <div class="container">
+    <div class="section-header">
+      <h2>Get Your Free AI Prompt eBook</h2>
+      <p>Enter your email to receive the free AI prompt PDF book.</p>
     </div>
-  </section>
+    <form id="aiPromptForm" class="contact-form" novalidate>
+      <div class="form-group">
+        <label for="promptEmail">Email</label>
+        <input type="email" id="promptEmail" class="form-control" placeholder="Your email" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Send me the eBook</button>
+    </form>
+    <div id="aiPromptMessage" style="margin-top: 20px; text-align: center;"></div>
+  </div>
+</section>
   
 
   <!-- Contact Section -->
@@ -1141,33 +1141,62 @@
       });
 
       // AI Prompt Form Submission
-      document.getElementById('aiPromptForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const email = document.getElementById('promptEmail').value;
-        const messageEl = document.getElementById('aiPromptMessage');
-        messageEl.textContent = '';
-        messageEl.style.color = '';
-        fetch('https://zeecomedia-mail.onrender.com/subscribe', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ email: email })
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.success) {
-            messageEl.style.color = 'green';
-            messageEl.textContent = 'Success! Check your email for the free eBook.';
-            document.getElementById('aiPromptForm').reset();
-          } else {
-            throw new Error(data.message || 'Failed to send eBook.');
-          }
-        })
-        .catch(err => {
-          messageEl.style.color = 'red';
-          messageEl.textContent = 'Error: ' + err.message;
+  document.getElementById('aiPromptForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('promptEmail').value;
+      const messageEl = document.getElementById('aiPromptMessage');
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.textContent;
+      
+      // Reset previous messages
+      messageEl.textContent = '';
+      messageEl.style.color = '';
+      
+      // Disable button and change text
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      
+      // Send request to the backend
+      fetch('https://zeecomedia-mail.onrender.com/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Origin': window.location.origin
+        },
+        body: JSON.stringify({ email: email })
+      })
+      .then(response => {
+        // Parse response as JSON
+        return response.json().then(data => {
+          // Return both the status and the data
+          return { status: response.status, data: data };
         });
+      })
+      .then(result => {
+        if (result.status === 200) {
+          // Success
+          messageEl.style.color = 'green';
+          messageEl.textContent = 'Success! Check your email for the free eBook.';
+          document.getElementById('aiPromptForm').reset();
+        } else {
+          // Server returned an error status
+          throw new Error(result.data.error || result.data.message || 'Failed to send eBook.');
+        }
+      })
+      .catch(err => {
+        // Client-side or network error
+        messageEl.style.color = 'red';
+        messageEl.textContent = 'Error: ' + (err.message || 'Could not connect to server.');
+      })
+      .finally(() => {
+        // Re-enable button and restore original text
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }, 2000);
+      });
+    });
       });
     });
     
