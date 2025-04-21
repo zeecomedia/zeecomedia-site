@@ -1149,6 +1149,7 @@
       });
 
       // AI Prompt Form Submission
+      document.addEventListener("DOMContentLoaded", function() {
       const aiForm = document.getElementById('aiPromptForm');
       const messageEl = document.getElementById('aiPromptMessage');
 
@@ -1167,24 +1168,28 @@
         // Prepare button state
         const submitBtn = aiForm.querySelector('button[type="submit"]');
         const originalBtnText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
+        submitBtn.textContent = 'Sent';
         submitBtn.disabled = true;
         messageEl.textContent = '';
 
         try {
-          const response = await fetch('https://zeecomedia-mail.onrender.com/subscribe', {
+          const response = await fetch('https://zeecomedia.online/subscribe', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+              'Content-Type': 'application/json'
+            },
             body: JSON.stringify({ email })
           });
+
           const data = await response.json();
 
-          if (response.ok && data.success) {
+          if (response.ok) {
             messageEl.style.color = 'green';
-            messageEl.textContent = 'Email sent successfully! Check your inbox for the eBook.';
+            messageEl.textContent = data.message || 'Email sent successfully! Check your inbox for the eBook.';
             aiForm.reset();
           } else {
-            throw new Error(data.message || 'Subscription failed.');
+            messageEl.style.color = 'red';
+            messageEl.textContent = data.error || 'An error occurred. Please try again.';
           }
 
         } catch (err) {
