@@ -1149,33 +1149,52 @@
       });
 
       // AI Prompt Form Submission
-      document.getElementById('aiPromptForm').addEventListener('submit', function(e) {
+      const aiForm = document.getElementById('aiPromptForm');
+      const messageEl = document.getElementById('aiPromptMessage');
+
+      aiForm.addEventListener('submit', async function(e) {
         e.preventDefault();
-        const email = document.getElementById('promptEmail').value;
-        const messageEl = document.getElementById('aiPromptMessage');
-        messageEl.textContent = '';
-        messageEl.style.color = '';
-        fetch('https://zeecomedia-mail.onrender.com/subscribe', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ email: email })
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.success) {
-            messageEl.style.color = 'green';
-            messageEl.textContent = 'Success! Check your email for the free eBook.';
-            document.getElementById('aiPromptForm').reset();
-          } else {
-            throw new Error(data.message || 'Failed to send eBook.');
-          }
-        })
-        .catch(err => {
+        const emailInput = document.getElementById('promptEmail');
+        const email = emailInput.value.trim();
+
+        // Simple validation
+        if (!email) {
           messageEl.style.color = 'red';
-          messageEl.textContent = 'Error: ' + err.message;
-        });
+          messageEl.textContent = 'Please enter a valid email address.';
+          return;
+        }
+
+        // Prepare button state
+        const submitBtn = aiForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        messageEl.textContent = '';
+
+        try {
+          const response = await fetch('https://zeecomedia-mail.onrender.com/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email })
+          });
+          const data = await response.json();
+
+          if (response.ok && data.success) {
+            messageEl.style.color = 'green';
+            messageEl.textContent = 'Email sent successfully! Check your inbox for the eBook.';
+            aiForm.reset();
+          } else {
+            throw new Error(data.message || 'Subscription failed.');
+          }
+
+        } catch (err) {
+          messageEl.style.color = 'red';
+          messageEl.textContent = `Error: ${err.message}`;
+        } finally {
+          // Restore button
+          submitBtn.textContent = originalBtnText;
+          submitBtn.disabled = false;
+        }
       });
     });
     
