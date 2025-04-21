@@ -1130,56 +1130,55 @@
       // existing JS code...
 
       // Form Submission with Netlify for Contact Form
-      const contactForm = document.querySelector('form[data-netlify="true"]');
-      contactForm.addEventListener('submit', function(e) {
+      document.querySelector('.contact-form').addEventListener('submit', function(e) {
         e.preventDefault();
-        const btn = contactForm.querySelector('button[type="submit"]');
-        const originalText = btn.textContent;
-        btn.textContent = 'Sending...';
-        btn.disabled = true;
-        setTimeout(() => {
-          contactForm.reset();
-          btn.textContent = 'Message Sent!';
-          setTimeout(() => {
-            btn.textContent = originalText;
-            btn.disabled = false;
+        const form = this;
+        const formData = new FormData(form);
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        setTimeout(function() {
+          form.reset();
+          submitBtn.textContent = 'Message Sent!';
+          setTimeout(function() {
+            submitBtn.textContent = originalBtnText;
+            submitBtn.disabled = false;
           }, 3000);
         }, 1500);
       });
 
       // AI Prompt Form Submission
-     const submitBtn = aiForm.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
+      document.getElementById('aiPromptForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('promptEmail').value;
+        const messageEl = document.getElementById('aiPromptMessage');
         messageEl.textContent = '';
-
-        try {
-          const response = await fetch('https://zeecomedia-mail.onrender.com/subscribe', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email })
-          });
-          const data = await response.json();
-
-          if (response.ok && data.success) {
+        messageEl.style.color = '';
+        fetch('https://zeecomedia-mail.onrender.com/subscribe', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email: email })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
             messageEl.style.color = 'green';
-            messageEl.textContent = 'Email sent successfully! Check your inbox for the eBook.';
-            aiForm.reset();
+            messageEl.textContent = 'Success! Check your email for the free eBook.';
+            document.getElementById('aiPromptForm').reset();
           } else {
-            throw new Error(data.message || 'Subscription failed.');
+            throw new Error(data.message || 'Failed to send eBook.');
           }
-
-        } catch (err) {
+        })
+        .catch(err => {
           messageEl.style.color = 'red';
-          messageEl.textContent = `Error: ${err.message}`;
-        } finally {
-          // Restore button
-          submitBtn.textContent = originalBtnText;
-          submitBtn.disabled = false;
-        }
+          messageEl.textContent = 'Error: ' + err.message;
+        });
       });
     });
+    
   </script>
 </body>
 </html>
