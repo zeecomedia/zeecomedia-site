@@ -653,6 +653,22 @@
         font-size: 32px;
       }
     }
+    .message {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.message.success {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.message.error {
+  background-color: #f44336;
+  color: white;
+}
   </style>
 </head>
 <body>
@@ -1141,7 +1157,7 @@
       });
 
       // AI Prompt Form Submission
-  document.getElementById('aiPromptForm').addEventListener('submit', function(e) {
+      document.getElementById('aiPromptForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
       const email = document.getElementById('promptEmail').value;
