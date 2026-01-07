@@ -1608,7 +1608,8 @@
         .then(result => {
           if (result.status === 200) {
             messageEl.style.color = 'green';
-            messageEl.textContent = 'Success! Check your email for the free eBook.';
+            messageEl.textContent = 'Success! Check your inbox for the free eBook.
+              If you don’t see it, please check your Spam or Promotions folder.';
             document.getElementById('aiPromptForm').reset();
           } else {
             throw new Error(result.data.error || result.data.message || 'Failed to send eBook.');
