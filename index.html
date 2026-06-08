@@ -457,6 +457,7 @@
       justify-content: center;
       font-weight: 700;
       font-size: 18px;
+      flex-shrink: 0;
     }
     
     .author-info h5 {
@@ -701,11 +702,13 @@
       color: var(--gray);
       font-size: 16px;
     }
-    
-    /* Contact Section */
+
+    /* ============================================
+       CONTACT SECTION — FIXED
+       ============================================ */
     .contact {
       padding: 100px 0;
-      background: linear-gradient(135deg, rgba(123, 77, 255, 0.95) 0%, rgba(34, 34, 34, 0.95) 100%);
+      background: linear-gradient(135deg, rgba(155, 74, 155, 0.95) 0%, rgba(34, 34, 34, 0.95) 100%);
       color: var(--white);
     }
     
@@ -726,10 +729,26 @@
     .contact-form h3 {
       color: var(--secondary);
       margin-bottom: 30px;
+      font-size: 22px;
     }
     
     .form-group {
       margin-bottom: 20px;
+    }
+
+    /* Fix: labels styled consistently */
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--secondary);
+    }
+
+    /* Required asterisk */
+    .form-group label .required {
+      color: #e53e3e;
+      margin-left: 3px;
     }
     
     .form-control {
@@ -740,11 +759,25 @@
       font-family: 'Poppins', sans-serif;
       font-size: 16px;
       transition: border-color 0.3s ease;
+      color: var(--dark);
+      background: var(--white);
     }
     
     .form-control:focus {
       outline: none;
       border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(155, 74, 155, 0.12);
+    }
+
+    .form-control.error {
+      border-color: #e53e3e;
+    }
+
+    .field-error {
+      display: block;
+      margin-top: 5px;
+      font-size: 13px;
+      color: #e53e3e;
     }
     
     .form-row {
@@ -759,6 +792,30 @@
     textarea.form-control {
       resize: vertical;
       min-height: 120px;
+    }
+
+    /* Form status messages */
+    .form-status {
+      margin-top: 16px;
+      padding: 12px 16px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 500;
+      display: none;
+    }
+
+    .form-status.success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      display: block;
+    }
+
+    .form-status.error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+      display: block;
     }
     
     /* Footer */
@@ -800,6 +857,7 @@
     .footer-social {
       display: flex;
       gap: 15px;
+      margin-top: 20px;
       margin-bottom: 20px;
     }
     
@@ -902,6 +960,15 @@
       .team-member {
         margin-top: 0;
       }
+
+      .form-row {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .contact-form {
+        padding: 28px 20px;
+      }
     }
   </style>
 </head>
@@ -933,7 +1000,7 @@
       <div class="hero-content">
         <div class="hero-text">
           <div class="hero-badge">
-            <i class="fas fa-check-circle"></i> Trusted by US, UK & EU Companies
+            <i class="fas fa-check-circle"></i> Trusted by US, UK &amp; EU Companies
           </div>
           <h1>Enterprise Software Development That Delivers Results</h1>
           <p>We build scalable web and mobile applications for international businesses. From MVP to enterprise solutions, we deliver on time with transparent communication every step of the way.</p>
@@ -993,7 +1060,7 @@
           </div>
           <h3>Web Application Development</h3>
           <p>Custom web applications built with modern frameworks for scalability and performance. From e-commerce platforms to SaaS products.</p>
-          <div class="tech-stack">React • Node.js • Python • AWS</div>
+          <div class="tech-stack">React &bull; Node.js &bull; Python &bull; AWS</div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -1001,39 +1068,39 @@
           </div>
           <h3>Mobile App Development</h3>
           <p>Native and cross-platform mobile applications for iOS and Android with seamless user experiences.</p>
-          <div class="tech-stack">React Native • Flutter • iOS • Android</div>
+          <div class="tech-stack">React Native &bull; Flutter &bull; iOS &bull; Android</div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-network-wired"></i>
           </div>
-          <h3>API Development & Integration</h3>
+          <h3>API Development &amp; Integration</h3>
           <p>RESTful and GraphQL APIs with third-party service integration including payment gateways, CRMs, and business tools.</p>
-          <div class="tech-stack">REST • GraphQL • Stripe • PayPal</div>
+          <div class="tech-stack">REST &bull; GraphQL &bull; Stripe &bull; PayPal</div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-cloud"></i>
           </div>
-          <h3>Cloud Architecture & DevOps</h3>
+          <h3>Cloud Architecture &amp; DevOps</h3>
           <p>Scalable cloud infrastructure with automated deployment pipelines and continuous integration.</p>
-          <div class="tech-stack">AWS • Azure • Docker • CI/CD</div>
+          <div class="tech-stack">AWS &bull; Azure &bull; Docker &bull; CI/CD</div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-brain"></i>
           </div>
-          <h3>AI & Machine Learning Integration</h3>
+          <h3>AI &amp; Machine Learning Integration</h3>
           <p>Intelligent features powered by AI including chatbots, recommendation systems, and data analytics.</p>
-          <div class="tech-stack">OpenAI • TensorFlow • NLP</div>
+          <div class="tech-stack">OpenAI &bull; TensorFlow &bull; NLP</div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-shield-alt"></i>
           </div>
-          <h3>Maintenance & Support</h3>
+          <h3>Maintenance &amp; Support</h3>
           <p>Ongoing technical support with bug fixes, security updates, feature enhancements, and 24/7 emergency response.</p>
-          <div class="tech-stack">Monitoring • Updates • Security</div>
+          <div class="tech-stack">Monitoring &bull; Updates &bull; Security</div>
         </div>
       </div>
     </div>
@@ -1049,31 +1116,31 @@
       <div class="process-steps">
         <div class="process-step">
           <div class="process-number">1</div>
-          <h4>Discovery & Planning</h4>
+          <h4>Discovery &amp; Planning</h4>
           <p>Requirements gathering, technical specification, and project roadmap creation.</p>
           <strong style="color: var(--primary); display: block; margin-top: 10px;">1-2 weeks</strong>
         </div>
         <div class="process-step">
           <div class="process-number">2</div>
-          <h4>Design & Architecture</h4>
+          <h4>Design &amp; Architecture</h4>
           <p>UI/UX design, system architecture, and technology stack selection.</p>
           <strong style="color: var(--primary); display: block; margin-top: 10px;">2-3 weeks</strong>
         </div>
         <div class="process-step">
           <div class="process-number">3</div>
-          <h4>Development & Testing</h4>
+          <h4>Development &amp; Testing</h4>
           <p>Agile sprints with weekly demos, continuous testing, and quality assurance.</p>
           <strong style="color: var(--primary); display: block; margin-top: 10px;">6-12 weeks</strong>
         </div>
         <div class="process-step">
           <div class="process-number">4</div>
-          <h4>Deployment & Training</h4>
+          <h4>Deployment &amp; Training</h4>
           <p>Production deployment, team training, and comprehensive documentation.</p>
           <strong style="color: var(--primary); display: block; margin-top: 10px;">1 week</strong>
         </div>
         <div class="process-step">
           <div class="process-number">5</div>
-          <h4>Support & Maintenance</h4>
+          <h4>Support &amp; Maintenance</h4>
           <p>30-day warranty period with optional ongoing support and feature enhancements.</p>
           <strong style="color: var(--primary); display: block; margin-top: 10px;">Ongoing</strong>
         </div>
@@ -1091,90 +1158,70 @@
       <div class="testimonial-grid">
         <div class="testimonial-card">
           <div class="testimonial-stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
           <p class="testimonial-text">"The social platform development Zeecomedia delivered for Industrial Ecosystems exceeded our expectations. Their customer-centric approach to solving complex technical problems made all the difference. Highly professional team!"</p>
           <div class="testimonial-author">
             <div class="author-avatar">GA</div>
             <div class="author-info">
               <h5>Greg Adkins</h5>
-              <p>Industrial Ecosystems, LLC • USA</p>
+              <p>Industrial Ecosystems, LLC &bull; USA</p>
             </div>
           </div>
         </div>
         
         <div class="testimonial-card">
           <div class="testimonial-stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
           <p class="testimonial-text">"The mobile app development service was absolutely superb and went beyond our expectations. Zeecomedia's attention to detail and technical expertise is top-notch. I highly recommend them for any mobile app project."</p>
           <div class="testimonial-author">
             <div class="author-avatar">ES</div>
             <div class="author-info">
               <h5>Emmanuel Shobowale</h5>
-              <p>Mobile App Client • Nigeria</p>
+              <p>Mobile App Client &bull; Nigeria</p>
             </div>
           </div>
         </div>
         
         <div class="testimonial-card">
           <div class="testimonial-stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
           <p class="testimonial-text">"The LMS development for Zuma Marketing was exceptional. Zeecomedia built a powerful learning management system that surpassed our imagination in both functionality and user experience. Outstanding work!"</p>
           <div class="testimonial-author">
             <div class="author-avatar">OC</div>
             <div class="author-info">
               <h5>Ozoemelam O. Charles</h5>
-              <p>Zuma Marketing Limited • Nigeria</p>
+              <p>Zuma Marketing Limited &bull; Nigeria</p>
             </div>
           </div>
         </div>
         
         <div class="testimonial-card">
           <div class="testimonial-stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
           <p class="testimonial-text">"Our real estate web platform is exactly what we needed - user-friendly, professional, and perfectly tailored to our business requirements. Zeecomedia delivered quality that matched our high expectations."</p>
           <div class="testimonial-author">
             <div class="author-avatar">FO</div>
             <div class="author-info">
               <h5>Femi Oke</h5>
-              <p>Landblaze Nigeria Limited • Nigeria</p>
+              <p>Landblaze Nigeria Limited &bull; Nigeria</p>
             </div>
           </div>
         </div>
         
         <div class="testimonial-card">
           <div class="testimonial-stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
           <p class="testimonial-text">"Zeecomedia built our official marketing website with exceptional design and development quality. They understood our vision and delivered a professional platform that represents our brand perfectly."</p>
           <div class="testimonial-author">
             <div class="author-avatar">MO</div>
             <div class="author-info">
               <h5>Morgan Opara</h5>
-              <p>JGuide Marketing Limited • Nigeria</p>
+              <p>JGuide Marketing Limited &bull; Nigeria</p>
             </div>
           </div>
         </div>
@@ -1269,7 +1316,6 @@
             <p>We're based in Nigeria (WAT/GMT+1) and maintain flexible hours to accommodate US, UK, and EU clients. We typically have 4-6 hours of overlap with US East Coast and full overlap with European time zones. We schedule regular meetings at times convenient for you.</p>
           </div>
         </div>
-        
         <div class="faq-item">
           <div class="faq-question">
             <span>How do you handle communication?</span>
@@ -1279,7 +1325,6 @@
             <p>All our team members are fluent English speakers. We use Slack/Email for daily updates, Zoom/Google Meet for weekly video calls, and project management tools like Jira or Trello for transparency. You'll have direct access to your project manager and development team.</p>
           </div>
         </div>
-        
         <div class="faq-item">
           <div class="faq-question">
             <span>What are your payment terms?</span>
@@ -1289,7 +1334,6 @@
             <p>We accept international payments via bank transfer, PayPal, Wise, or Payoneer. Typical payment structure: 40% upfront, 40% at midpoint milestone, 20% upon completion. For enterprise projects, we can discuss monthly billing or milestone-based payments. Escrow options available.</p>
           </div>
         </div>
-        
         <div class="faq-item">
           <div class="faq-question">
             <span>Do you sign NDAs and contracts?</span>
@@ -1299,7 +1343,6 @@
             <p>Absolutely. We sign NDAs and provide formal contracts in English for all projects. We have standard agreements covering IP transfer, confidentiality, deliverables, timelines, and payment terms. We can also work with your legal team on custom contracts.</p>
           </div>
         </div>
-        
         <div class="faq-item">
           <div class="faq-question">
             <span>Who owns the code and intellectual property?</span>
@@ -1309,7 +1352,6 @@
             <p>Upon final payment, you own 100% of the code, design assets, and intellectual property. We provide complete source code, documentation, and deployment credentials. This is standard in our contracts.</p>
           </div>
         </div>
-        
         <div class="faq-item">
           <div class="faq-question">
             <span>What happens after the project is completed?</span>
@@ -1319,7 +1361,6 @@
             <p>Every project includes a 30-90 day warranty period for bug fixes. After that, we offer optional monthly maintenance retainers ($500-$2000/month) or hourly support ($50-$100/hour) for updates, features, and technical support. Many clients choose ongoing partnerships.</p>
           </div>
         </div>
-        
         <div class="faq-item">
           <div class="faq-question">
             <span>What if we're not satisfied with the work?</span>
@@ -1329,7 +1370,6 @@
             <p>We work in iterative sprints with regular demos, so you see progress every week. If something isn't right, we revise it immediately - no questions asked. Our contracts include revision rounds at each milestone. Client satisfaction is our top priority, which is why we maintain 98% on-time delivery and high retention rates.</p>
           </div>
         </div>
-        
         <div class="faq-item">
           <div class="faq-question">
             <span>Can you help with ongoing development and scaling?</span>
@@ -1398,7 +1438,7 @@
             <img src="images/zeecomedia-ceo-founder.jpg" alt="Isaac Yakubu">
           </div>
           <h4 class="team-name">Isaac Yakubu</h4>
-          <p class="team-role">Founder & Lead Developer</p>
+          <p class="team-role">Founder &amp; Lead Developer</p>
         </div>
       </div>
     </div>
@@ -1413,12 +1453,13 @@
       </div>
       <form id="aiPromptForm" class="contact-form" style="max-width: 500px;" novalidate>
         <div class="form-group">
-          <label for="promptEmail">Email Address</label>
+          <label for="promptEmail">Email Address <span class="required">*</span></label>
           <input type="email" id="promptEmail" class="form-control" placeholder="your@email.com" required>
+          <span class="field-error" id="promptEmailError"></span>
         </div>
         <button type="submit" class="btn btn-primary">Send me the Free eBook</button>
+        <div class="form-status" id="aiPromptStatus"></div>
       </form>
-      <div id="aiPromptMessage" style="margin-top: 20px; text-align: center; font-weight: 600;"></div>
     </div>
   </section>
 
@@ -1429,31 +1470,44 @@
         <h2>Schedule Your Free Consultation</h2>
         <p>Ready to start your project? Get in touch and let's discuss how we can help bring your vision to life.</p>
       </div>
-      <form class="contact-form" id="contactForm">
-        <h3>Contact Form</h3>
+
+      <!-- ===== FIXED CONTACT FORM ===== -->
+      <form class="contact-form" id="contactForm" novalidate>
+        <h3>Send Us a Message</h3>
+
         <div class="form-row">
           <div class="form-group">
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" class="form-control" required>
+            <label for="fname">First Name <span class="required">*</span></label>
+            <input type="text" id="fname" name="fname" class="form-control" placeholder="John" autocomplete="given-name" required>
+            <span class="field-error" id="fnameError"></span>
           </div>
           <div class="form-group">
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" class="form-control" required>
+            <label for="lname">Last Name <span class="required">*</span></label>
+            <input type="text" id="lname" name="lname" class="form-control" placeholder="Doe" autocomplete="family-name" required>
+            <span class="field-error" id="lnameError"></span>
           </div>
         </div>
+
         <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" class="form-control" required>
+          <label for="email">Email Address <span class="required">*</span></label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="john@company.com" autocomplete="email" required>
+          <span class="field-error" id="emailError"></span>
         </div>
+
         <div class="form-group">
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" class="form-control" required>
+          <label for="subject">Subject <span class="required">*</span></label>
+          <input type="text" id="subject" name="subject" class="form-control" placeholder="e.g. Web App Development Inquiry" required>
+          <span class="field-error" id="subjectError"></span>
         </div>
+
         <div class="form-group">
-          <label for="message">Tell us about your project</label>
-          <textarea id="message" class="form-control" rows="5" placeholder="What are you looking to build? What's your timeline and budget?" required></textarea>
+          <label for="message">Tell us about your project <span class="required">*</span></label>
+          <textarea id="message" name="message" class="form-control" rows="5" placeholder="What are you looking to build? What's your timeline and budget?" required></textarea>
+          <span class="field-error" id="messageError"></span>
         </div>
-        <button type="submit" class="btn btn-primary">Send Message</button>
+
+        <button type="submit" class="btn btn-primary" id="contactSubmitBtn">Send Message</button>
+        <div class="form-status" id="contactFormStatus"></div>
       </form>
     </div>
   </section>
@@ -1467,9 +1521,9 @@
           <a href="#" class="logo" style="color: white; font-size: 22px;">zeeco<span style="color: var(--primary);">media</span>.</a>
           <p style="margin-top: 15px; color: rgba(255, 255, 255, 0.7);">Enterprise software development for international businesses. Trusted by clients in 12 countries.</p>
           <div class="footer-social">
-            <a href="https://web.facebook.com/zeecomedia2/"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.linkedin.com/in/zeeco-media-aa0bbb187"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/zeecomedia"><i class="fab fa-github"></i></a>
+            <a href="https://web.facebook.com/zeecomedia2/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/in/zeeco-media-aa0bbb187" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/zeecomedia" aria-label="GitHub"><i class="fab fa-github"></i></a>
           </div>
         </div>
         <div class="footer-col">
@@ -1502,101 +1556,133 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> All rights reserved | Zeecomedia Tech. Enterprise</p>
+        <!-- FIX: removed inline <script> tag inside <p>; use a span updated by JS instead -->
+        <p>Copyright &copy; <span id="footerYear"></span> All rights reserved | Zeecomedia Tech. Enterprise</p>
       </div>
     </div>
   </footer>
 
   <!-- JavaScript -->
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // Mobile Menu Toggle
-      document.getElementById('hamburger').addEventListener('click', function() {
-        document.getElementById('navLinks').classList.toggle('active');
+    document.addEventListener("DOMContentLoaded", function () {
+
+      // ── Footer year ──────────────────────────────────────────────
+      document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+      // ── Mobile Menu Toggle ────────────────────────────────────────
+      const hamburger = document.getElementById('hamburger');
+      const navLinks  = document.getElementById('navLinks');
+
+      function closeMobileMenu() {
+        navLinks.classList.remove('active');
+        const icon = hamburger.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+
+      hamburger.addEventListener('click', function () {
+        navLinks.classList.toggle('active');
         const icon = this.querySelector('i');
-        if (icon.classList.contains('fa-bars')) {
-          icon.classList.remove('fa-bars');
-          icon.classList.add('fa-times');
-        } else {
-          icon.classList.remove('fa-times');
-          icon.classList.add('fa-bars');
-        }
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
       });
-      
-      // Smooth Scrolling
+
+      // ── Smooth Scrolling (closes menu on mobile) ──────────────────
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          document.getElementById('navLinks').classList.remove('active');
-          const hamburgerIcon = document.querySelector('#hamburger i');
-          if (hamburgerIcon.classList.contains('fa-times')) {
-            hamburgerIcon.classList.remove('fa-times');
-            hamburgerIcon.classList.add('fa-bars');
-          }
           const targetId = this.getAttribute('href');
+          if (targetId === '#') {
+            e.preventDefault();
+            closeMobileMenu();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+          }
           const targetElement = document.querySelector(targetId);
           if (targetElement) {
+            e.preventDefault();
+            closeMobileMenu();
             const offsetTop = targetElement.offsetTop - 70;
-            window.scrollTo({
-              top: targetId === '#' ? 0 : offsetTop,
-              behavior: 'smooth'
-            });
+            window.scrollTo({ top: offsetTop, behavior: 'smooth' });
           }
         });
       });
-      
-      // FAQ Accordion
+
+      // ── FAQ Accordion ─────────────────────────────────────────────
       document.querySelectorAll('.faq-question').forEach(question => {
-        question.addEventListener('click', function() {
+        question.addEventListener('click', function () {
           const faqItem = this.parentElement;
           const isActive = faqItem.classList.contains('active');
-          
-          // Close all FAQ items
-          document.querySelectorAll('.faq-item').forEach(item => {
-            item.classList.remove('active');
-          });
-          
-          // Open clicked item if it wasn't active
-          if (!isActive) {
-            faqItem.classList.add('active');
-          }
+          document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+          if (!isActive) faqItem.classList.add('active');
         });
       });
-      
-      // Active menu on scroll
+
+      // ── Active menu on scroll ─────────────────────────────────────
       const sections = document.querySelectorAll('section');
-      const navLinks = document.querySelectorAll('.nav-links a');
-      
-      window.addEventListener('scroll', function() {
+      const navAnchors = document.querySelectorAll('.nav-links a');
+
+      window.addEventListener('scroll', function () {
         let current = '';
         sections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.clientHeight;
-          if (pageYOffset >= (sectionTop - 150)) {
+          if (pageYOffset >= section.offsetTop - 150) {
             current = section.getAttribute('id');
           }
         });
-        
-        navLinks.forEach(link => {
+        navAnchors.forEach(link => {
           link.classList.remove('active');
-          if (link.getAttribute('href').substring(1) === current) {
+          if (link.getAttribute('href') === '#' + current) {
             link.classList.add('active');
           }
         });
       });
-      
-      // AI Prompt Form
-      document.getElementById('aiPromptForm').addEventListener('submit', function(e) {
+
+      // ── Validation helper ─────────────────────────────────────────
+      function showError(inputId, errorId, message) {
+        const input = document.getElementById(inputId);
+        const error = document.getElementById(errorId);
+        input.classList.add('error');
+        error.textContent = message;
+      }
+
+      function clearError(inputId, errorId) {
+        const input = document.getElementById(inputId);
+        const error = document.getElementById(errorId);
+        input.classList.remove('error');
+        error.textContent = '';
+      }
+
+      function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      // Live-clear errors on input
+      ['fname','lname','email','subject','message'].forEach(id => {
+        const input = document.getElementById(id);
+        if (input) {
+          input.addEventListener('input', () => clearError(id, id + 'Error'));
+        }
+      });
+
+      // ── AI Prompt Form ────────────────────────────────────────────
+      document.getElementById('aiPromptForm').addEventListener('submit', function (e) {
         e.preventDefault();
-        const email = document.getElementById('promptEmail').value;
-        const messageEl = document.getElementById('aiPromptMessage');
+
+        const email    = document.getElementById('promptEmail').value.trim();
+        const statusEl = document.getElementById('aiPromptStatus');
         const submitBtn = this.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.textContent;
-        
-        messageEl.textContent = '';
+
+        // Reset
+        statusEl.className = 'form-status';
+        clearError('promptEmail', 'promptEmailError');
+
+        if (!email || !validateEmail(email)) {
+          showError('promptEmail', 'promptEmailError', 'Please enter a valid email address.');
+          return;
+        }
+
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
-        
+
         fetch('https://zeecomedia-mail.onrender.com/subscribe', {
           method: 'POST',
           headers: {
@@ -1608,44 +1694,91 @@
         .then(response => response.json().then(data => ({ status: response.status, data: data })))
         .then(result => {
           if (result.status === 200) {
-            messageEl.style.color = 'green';
-            messageEl.textContent = 'Success! Check your inbox for the free eBook.
-              If you don’t see it, please check your Spam or Promotions folder.';
+            statusEl.className = 'form-status success';
+            statusEl.textContent = 'Success! Check your inbox for the free eBook. If you don\'t see it, please check your Spam or Promotions folder.';
             document.getElementById('aiPromptForm').reset();
           } else {
             throw new Error(result.data.error || result.data.message || 'Failed to send eBook.');
           }
         })
         .catch(err => {
-          messageEl.style.color = 'red';
-          messageEl.textContent = 'Error: ' + (err.message || 'Could not connect to server.');
+          statusEl.className = 'form-status error';
+          statusEl.textContent = 'Error: ' + (err.message || 'Could not connect to server. Please try again.');
         })
         .finally(() => {
           setTimeout(() => {
             submitBtn.disabled = false;
-            submitBtn.textContent = originalBtnText;
+            submitBtn.textContent = 'Send me the Free eBook';
           }, 2000);
         });
       });
-      
-      // Contact Form
-      document.getElementById('contactForm').addEventListener('submit', function(e) {
+
+      // ── Contact Form ──────────────────────────────────────────────
+      document.getElementById('contactForm').addEventListener('submit', function (e) {
         e.preventDefault();
-        const submitBtn = this.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
+
+        const fname   = document.getElementById('fname').value.trim();
+        const lname   = document.getElementById('lname').value.trim();
+        const email   = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
+        const statusEl = document.getElementById('contactFormStatus');
+        const submitBtn = document.getElementById('contactSubmitBtn');
+
+        // Reset all errors
+        ['fname','lname','email','subject','message'].forEach(id => clearError(id, id + 'Error'));
+        statusEl.className = 'form-status';
+
+        let valid = true;
+
+        if (!fname) { showError('fname', 'fnameError', 'First name is required.'); valid = false; }
+        if (!lname) { showError('lname', 'lnameError', 'Last name is required.'); valid = false; }
+        if (!email || !validateEmail(email)) { showError('email', 'emailError', 'A valid email address is required.'); valid = false; }
+        if (!subject) { showError('subject', 'subjectError', 'Please provide a subject.'); valid = false; }
+        if (!message || message.length < 20) { showError('message', 'messageError', 'Please describe your project in at least 20 characters.'); valid = false; }
+
+        if (!valid) return;
+
         submitBtn.disabled = true;
-        
-        setTimeout(function() {
-          submitBtn.textContent = 'Message Sent!';
-          setTimeout(function() {
-            submitBtn.textContent = originalBtnText;
-            submitBtn.disabled = false;
+        submitBtn.textContent = 'Sending...';
+
+        // Send via the same mail backend endpoint
+        fetch('https://zeecomedia-mail.onrender.com/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Origin': window.location.origin
+          },
+          body: JSON.stringify({ fname, lname, email, subject, message })
+        })
+        .then(response => response.json().then(data => ({ status: response.status, data: data })))
+        .then(result => {
+          if (result.status === 200 || result.status === 201) {
+            statusEl.className = 'form-status success';
+            statusEl.textContent = 'Message sent! We\'ll get back to you within 24 hours.';
             document.getElementById('contactForm').reset();
-          }, 2000);
-        }, 1500);
+          } else {
+            throw new Error(result.data.error || result.data.message || 'Submission failed.');
+          }
+        })
+        .catch(() => {
+          // Graceful fallback: open mail client with pre-filled content
+          const mailBody = encodeURIComponent(
+            'Name: ' + fname + ' ' + lname + '\nEmail: ' + email + '\n\n' + message
+          );
+          const mailSubject = encodeURIComponent(subject);
+          window.location.href = 'mailto:help@zeecomedia.net?subject=' + mailSubject + '&body=' + mailBody;
+
+          statusEl.className = 'form-status success';
+          statusEl.textContent = 'Opening your email client as a fallback. Alternatively, email us directly at help@zeecomedia.net.';
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+        });
       });
-    });
+
+    }); // end DOMContentLoaded
   </script>
 </body>
 </html>
