@@ -1683,13 +1683,12 @@
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
 
-        fetch('https://zeecomedia-mail.onrender.com/subscribe', {
-          method: 'POST',
+        fetch('https://zeecomedia-function.netlify.app/.netlify/functions/send-email', {
+         method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
-            'Origin': window.location.origin
+            'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ email: email })
+          body: JSON.stringify({ action: 'subscribe', email: email })
         })
         .then(response => response.json().then(data => ({ status: response.status, data: data })))
         .then(result => {
@@ -1743,13 +1742,12 @@
         submitBtn.textContent = 'Sending...';
 
         // Send via the same mail backend endpoint
-        fetch('https://zeecomedia-mail.onrender.com/contact', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Origin': window.location.origin
-          },
-          body: JSON.stringify({ fname, lname, email, subject, message })
+        fetch('https://zeecomedia-function.netlify.app/.netlify/functions/send-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ action: 'contact', fname, lname, email, subject, message })
         })
         .then(response => response.json().then(data => ({ status: response.status, data: data })))
         .then(result => {
