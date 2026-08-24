@@ -1,0 +1,27 @@
+# Zeecomedia crawler policy
+
+User-agent: *
+Allow: /
+
+# Search and AI retrieval crawlers
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Keep non-public application paths out of crawl where applicable.
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+
+Sitemap: https://zeecomedia.net/sitemap.xml

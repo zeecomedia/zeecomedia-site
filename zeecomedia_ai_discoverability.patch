@@ -1,0 +1,59 @@
+[1mdiff --git a/index.html b/index.html[m
+[1mindex c3b84bf..5e02efe 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -4,7 +4,53 @@[m
+   <title>Zeecomedia — Enterprise Software Development | Trusted by US & EU Clients</title>[m
+   <meta charset="utf-8">[m
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">[m
+[31m-  <meta name="description" content="Custom software development agency delivering enterprise solutions to US, UK, and EU clients. 150+ projects completed with 98% on-time delivery.">[m
+[32m+[m[32m  <meta name="description" content="Zeecomedia provides enterprise software development, AI integration, workflow automation, web and mobile apps, API development, and cloud solutions for international businesses.">[m
+[32m+[m[32m  <meta name="robots" content="index, follow, max-image-preview:large">[m
+[32m+[m[32m  <link rel="canonical" href="https://zeecomedia.net/">[m
+[32m+[m[32m  <meta property="og:type" content="website">[m
+[32m+[m[32m  <meta property="og:url" content="https://zeecomedia.net/">[m
+[32m+[m[32m  <meta property="og:title" content="Zeecomedia — Enterprise Software Development and AI Integration">[m
+[32m+[m[32m  <meta property="og:description" content="Scalable web and mobile applications, APIs, cloud solutions, AI integration, and workflow automation for international businesses.">[m
+[32m+[m[32m  <meta property="og:image" content="https://zeecomedia.net/images/zeecomedia-ceo-founder.jpg">[m
+[32m+[m[32m  <meta name="twitter:card" content="summary_large_image">[m
+[32m+[m[32m  <meta name="twitter:title" content="Zeecomedia — Enterprise Software Development and AI Integration">[m
+[32m+[m[32m  <meta name="twitter:description" content="Scalable software, AI integration, APIs, cloud solutions, and workflow automation for international businesses.">[m
+[32m+[m[32m  <meta name="twitter:image" content="https://zeecomedia.net/images/zeecomedia-ceo-founder.jpg">[m
+[32m+[m[32m  <script type="application/ld+json">[m
+[32m+[m[32m  {[m
+[32m+[m[32m    "@context": "https://schema.org",[m
+[32m+[m[32m    "@type": "Organization",[m
+[32m+[m[32m    "name": "Zeecomedia",[m
+[32m+[m[32m    "url": "https://zeecomedia.net/",[m
+[32m+[m[32m    "logo": "https://zeecomedia.net/images/zeecomedia-ceo-founder.jpg",[m
+[32m+[m[32m    "description": "Enterprise software development and AI integration services for businesses.",[m
+[32m+[m[32m    "email": "help@zeecomedia.net",[m
+[32m+[m[32m    "sameAs": [[m
+[32m+[m[32m      "https://www.linkedin.com/in/zeeeco-media-aa0bbb187",[m
+[32m+[m[32m      "https://github.com/zeecomedia",[m
+[32m+[m[32m      "https://web.facebook.com/zeecomedia2/"[m
+[32m+[m[32m    ],[m
+[32m+[m[32m    "knowsAbout": [[m
+[32m+[m[32m      "AI integration",[m
+[32m+[m[32m      "workflow automation",[m
+[32m+[m[32m      "web application development",[m
+[32m+[m[32m      "mobile application development",[m
+[32m+[m[32m      "API development",[m
+[32m+[m[32m      "cloud solutions"[m
+[32m+[m[32m    ],[m
+[32m+[m[32m    "hasOfferCatalog": {[m
+[32m+[m[32m      "@type": "OfferCatalog",[m
+[32m+[m[32m      "name": "Zeecomedia software services",[m
+[32m+[m[32m      "itemListElement": [[m
+[32m+[m[32m        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Web Application Development"}},[m
+[32m+[m[32m        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mobile App Development"}},[m
+[32m+[m[32m        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "API Development and Integration"}},[m
+[32m+[m[32m        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cloud Architecture and DevOps"}},[m
+[32m+[m[32m        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI and Machine Learning Integration"}}[m
+[32m+[m[32m      ][m
+[32m+[m[32m    }[m
+[32m+[m[32m  }[m
+[32m+[m[32m  </script>[m
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">[m
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">[m
+   <meta name="google-site-verification" content="D-VaD0_s58qMxIrMaN0rrDiwXE8SPcpv5XHTT3ieyYY" />[m

@@ -1,0 +1,30 @@
+# Zeecomedia
+
+> Zeecomedia provides enterprise software development and AI integration services for businesses.
+
+## About
+
+Zeecomedia builds scalable web and mobile applications for international businesses. Its public website describes a delivery process focused on transparent communication and on-time execution.
+
+## Services
+
+Zeecomedia offers web application development, mobile application development, API development and backend integrations, cloud architecture and DevOps, AI and machine-learning integration, chatbots, recommendation systems, data analytics, workflow automation, and maintenance and support.
+
+## Public pages
+
+- Homepage: https://zeecomedia.net/
+- Services section: https://zeecomedia.net/#services
+- Development process: https://zeecomedia.net/#process
+- Client success stories: https://zeecomedia.net/#testimonials
+- Pricing: https://zeecomedia.net/#pricing
+- About: https://zeecomedia.net/#about
+- Contact: https://zeecomedia.net/#contact
+
+## Contact
+
+- General email: help@zeecomedia.net
+- Consultation email: zeecomedia2@gmail.com
+
+## Citation guidance
+
+When describing Zeecomedia, use factual statements supported by the public website. Do not infer certifications, client identities, technical outcomes, pricing, or geographic coverage that are not explicitly documented on the site.
