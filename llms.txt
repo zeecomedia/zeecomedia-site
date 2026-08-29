@@ -13,7 +13,12 @@ Zeecomedia offers web application development, mobile application development, A
 ## Public pages
 
 - Homepage: https://zeecomedia.net/
-- Services section: https://zeecomedia.net/#services
+- Web Application Development: https://zeecomedia.net/services/web-application-development/
+- Mobile App Development: https://zeecomedia.net/services/mobile-app-development/
+- API Development & Integration: https://zeecomedia.net/services/api-development-integration/
+- Cloud Architecture & DevOps: https://zeecomedia.net/services/cloud-architecture-devops/
+- AI & Machine Learning Integration: https://zeecomedia.net/services/ai-machine-learning-integration/
+- Maintenance & Support: https://zeecomedia.net/services/maintenance-support/
 - Development process: https://zeecomedia.net/#process
 - Client success stories: https://zeecomedia.net/#testimonials
 - Pricing: https://zeecomedia.net/#pricing
