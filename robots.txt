@@ -19,6 +19,15 @@ Allow: /
 User-agent: Claude-User
 Allow: /
 
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 # Keep non-public application paths out of crawl where applicable.
 Disallow: /admin/
 Disallow: /api/
